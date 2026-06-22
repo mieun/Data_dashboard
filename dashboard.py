@@ -9,7 +9,7 @@ st.title('핀테크 결제 대시보드')
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('핀테크_정제완료.csv')
+    df = pd.read_csv('fintech_clean.csv')
     df['거래일시'] = pd.to_datetime(df['거래일시'])
     df['월'] = df['거래일시'].dt.to_period('M').astype(str)
     return df
